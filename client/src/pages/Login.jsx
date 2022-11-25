@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import GoogleLogo from "../assets/google-logo.png";
 import Avatar from "../assets/Group 35125.png";
@@ -6,16 +6,24 @@ import Facebook from "../assets/ci_facebook.png";
 import Whatsapp from "../assets/ri_whatsapp-fill.png";
 import OauthPopup from "react-oauth-popup";
 import Instagram from "../assets/ph_instagram-logo-fill.png";
+import { useDispatch } from "react-redux";
+import { SET_LOGIN_PAGE } from "../redux/features/auth/authSlice";
 import Swal from "sweetalert2";
 
 const Login = (props) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(SET_LOGIN_PAGE(true));
+  }, []);
+
   const [loginData, setLoginData] = useState(
     localStorage.getItem("loginData")
       ? JSON.parse(localStorage.getItem("loginData"))
       : null
   );
 
-  console.log(loginData);
+  // console.log(loginData);
 
   const handleLogin = async () => {
     const res = await fetch("https://compatibility.onrender.com/auth/google", {
@@ -52,7 +60,7 @@ const Login = (props) => {
   const onClose = () => {
     console.log("closed!");
   };
-  
+
   return (
     <div className="flex items-center justify-center pt-10 pb-14 ">
       <div className=" w-full flex flex-col items-center justify-center lg:w-[733px] h-[850px] md:w-[700px]  bg-[#8B80B6] bg-opacity-10 rounded-[20px] ">

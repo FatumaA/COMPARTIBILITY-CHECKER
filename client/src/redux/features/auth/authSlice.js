@@ -4,6 +4,7 @@ const name = JSON.parse(localStorage.getItem("name"));
 
 const initialState = {
   isLoggedIn: false,
+  logInPage: false,
   name: name ? name : "",
   user: {
     name: "",
@@ -29,12 +30,18 @@ const authSlice = createSlice({
       state.user.email = profile.email;  
       state.user.photo = profile.photo;  
     },
+    SET_LOGIN_PAGE(state, action) {
+        state.logInPage = action.payload;
+       
+      },
   },
 });
 
-export const { SET_LOGIN, SET_NAME, SET_USER } = authSlice.actions;
+export const { SET_LOGIN, SET_NAME, SET_USER, SET_LOGIN_PAGE } = authSlice.actions;
 
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
+export const selectLogInPage = (state) => state.auth.logInPage;
+
 export const selectName = (state) => state.auth.name;
 export const selectUser = (state) => state.auth.user;
 
