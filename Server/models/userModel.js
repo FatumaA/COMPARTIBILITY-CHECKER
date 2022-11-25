@@ -8,6 +8,9 @@ const userSchema = new Schema({
     googleId:{
         type:String,
     },
+    email:{
+        type:String
+    },
     thumbnail:{
         type:String,
     },
