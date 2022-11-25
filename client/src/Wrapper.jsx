@@ -3,15 +3,14 @@ import { Outlet } from "react-router-dom";
 import PropTypes from "prop-types";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 
 const Wrapper = ({ children }) => {
 	return (
 		<>
 			<Navbar />
-			<div className="container mx-auto">
-				{children}
-				<Outlet />
-			</div>
+			{children}
+			<Outlet />
 			<Footer />
 		</>
 	);
