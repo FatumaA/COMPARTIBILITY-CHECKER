@@ -1,8 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { cardData } from "../data/cardData";
 import Hero from "../components/Hero";
+import Card from "../components/Card";
+// import card1 from "../images/card1.png";
 
 const Home = (props) => {
+	console.log("carddata", cardData);
 	return (
 		<div>
 			<Hero />
@@ -26,12 +30,31 @@ const Home = (props) => {
 					in one study. The complexity of love has much to do with how people
 					experience it differently and how it can change over time.
 				</p>
-				<div class="relative  mt-28 w-[80%] place-self-center">
-					<img src={require("../images/about.png")} alt="abt" />
-					<p class="absolute text-3xl text-white bottom-4 left-1/2 -translate-x-1/2">
+				<div className="relative  mt-28 w-[80%] place-self-center">
+					<img src={"images/about.png"} alt="abt" />
+					<p className="absolute text-3xl text-white bottom-4 left-1/2 -translate-x-1/2">
 						Over 13,000 couples take this quiz
 					</p>
 				</div>
+			</div>
+			<div className="flex flex-col bg-primary bg-opacity-20 py-6 px-6">
+				<p className="font-semibold text-[#333]  text-3xl text-center pb-8">
+					Our Newsletter
+				</p>
+				<div className="flex flex-col md:flex-row gap-4 justify-between container mx-4 md:mx-auto">
+					{cardData.map((c, index) => (
+						<div key={index}>
+							<Card
+								srcImg={c.srcImg}
+								title={c.title}
+								publishedAt={c.publishedAt}
+							/>
+						</div>
+					))}
+				</div>
+				<button className="btn-primary w-fit place-self-center my-16">
+					View now
+				</button>
 			</div>
 		</div>
 	);
