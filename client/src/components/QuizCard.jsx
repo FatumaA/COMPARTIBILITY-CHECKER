@@ -1,12 +1,14 @@
 import React from 'react';
 
-const QuizCard = ({ question }) => {
+const QuizCard = ({ question, lengthOfQues }) => {
 	console.log(question);
 	const handleSelect = () => {};
 	return (
 		<div className="">
 			<div>
-				<h1 className="text-[#F97474] font-medium text-[20px] text-center mb-[14px]">Question 2/6</h1>
+				<h1 className="text-[#F97474] font-medium text-[20px] text-center mb-[14px]">
+					Question {question?.id}/{lengthOfQues}
+				</h1>
 				<p className="text-textDark font-medium text-[24px] mb-[56px] text-center">{question?.question}</p>
 
 				<div>

@@ -3,17 +3,18 @@ import QuizCard from '../components/QuizCard';
 import { questions } from '../data';
 
 const Quiz = () => {
+	const lengthOfQues = questions.length;
 	const [curQuest, setCurQuest] = useState(3);
 
 	const changeQuestion = (action) => {
 		if (action === 'next') {
-			if (curQuest === questions.length) {
+			if (curQuest === lengthOfQues) {
 				return;
 			} else {
 				setCurQuest((prev) => prev + 1);
 			}
 		}
-		if ((action === 'prev')) {
+		if (action === 'prev') {
 			if (curQuest === 1) {
 				return;
 			} else {
@@ -27,7 +28,7 @@ const Quiz = () => {
 			<div className="max-w-[693px] w-full mx-auto">
 				{questions.map((question, index) => {
 					if (curQuest === question.id) {
-						return <QuizCard question={question} curQuest={curQuest} />;
+						return <QuizCard question={question} lengthOfQues={lengthOfQues} />;
 					}
 				})}
 
