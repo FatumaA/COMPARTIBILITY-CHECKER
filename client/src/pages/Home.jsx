@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { cardData } from "../data/cardData";
+import { testimonials } from "../data/testimonial";
 import Hero from "../components/Hero";
 import Card from "../components/Card";
+import Testimonial from "../components/Testimonial";
 // import card1 from "../images/card1.png";
 
 const Home = (props) => {
@@ -32,7 +34,7 @@ const Home = (props) => {
 				</p>
 				<div className="relative  mt-28 w-[80%] place-self-center">
 					<img src={"images/about.png"} alt="abt" />
-					<p className="absolute text-3xl text-white bottom-4 left-1/2 -translate-x-1/2">
+					<p className="absolute text-lg md:text-2xl text-white bottom-4 left-1/2 -translate-x-1/2">
 						Over 13,000 couples take this quiz
 					</p>
 				</div>
@@ -55,6 +57,24 @@ const Home = (props) => {
 				<button className="btn-primary w-fit place-self-center my-16">
 					View now
 				</button>
+			</div>
+
+			<div className="flex flex-col pt-28 px-4">
+				<p className="font-semibold text-[#333]  text-3xl text-center pb-8">
+					What our couples say
+				</p>
+				<div className="flex flex-col md:flex-row gap-2 justify-between container mx-4 md:mx-auto mb-8">
+					{testimonials.map((t, index) => (
+						<div key={index}>
+							<Testimonial
+								srcImg={t.avatar}
+								name={t.name}
+								quote={t.quote}
+								stars={t.stars}
+							/>
+						</div>
+					))}
+				</div>
 			</div>
 		</div>
 	);
