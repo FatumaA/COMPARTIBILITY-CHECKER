@@ -21,15 +21,15 @@ passport.use(new GoogleStrategy( {
     //options for strategy
     callbackURL:process.env.callBack_URL,
     clientID:process.env.clientID,
-    clientSecret:process.env.clientSecret
-}, function(accessToken,refreshToken,profile,done){
-    console.log('callback function fired!');
-    console.log(profile);
+    clientSecret:process.env.clientSecret,
+    Proxy:true
+}, async(accessToken,refreshToken,profile,done) =>{
+
 
     //check if user exists
     User.findOne({googleId:profile.id}).then((currentUser) => {
         if (currentUser) {
-            done(null,currentUser);
+           return done(null,currentUser);
         }else{
             //create new user, if it does not exists
             new User({
@@ -39,7 +39,7 @@ passport.use(new GoogleStrategy( {
                 thumbnail:profile.photos.at(0).value
             }).save().then((newUser) => {
                 done(null, newUser);
-            })
+            });
         }
-    })
+    });
 } ) );
