@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-
+import { SET_LOGIN_PAGE } from "../redux/features/auth/authSlice";
+import { useDispatch } from "react-redux";
 const Card = ({ srcImg, title, publishedAt }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(SET_LOGIN_PAGE(false));
+  }, []);
+
 	console.log("in card", { srcImg, title });
 	return (
 		<div className="bg-white p-2 rounded-md w-fit">
