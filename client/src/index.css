@@ -9,11 +9,16 @@
                text-white text-sm lg:text-lg items-center rounded-md;
       }
     .btn-secondary {
-        @apply text-primary border-2 border-primary py-1 px-12 hover:text-hover hover:border-hover
+        @apply text-primary border-2 border-primary py-1 px-12 hover:text-hover bg-[#fff] hover:border-hover
         text-sm lg:text-lg items-center rounded-md;
     }
     .btn-accent {
         @apply bg-accent border-none rounded-l-3xl rounded-r-md py-1 px-3 hover:bg-accentHover
         text-white text-sm lg:text-lg items-center;
     }
+}
+
+body{
+    background-color: #ffffff;
+    min-height: 100vh;
 }
