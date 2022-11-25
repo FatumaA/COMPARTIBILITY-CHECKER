@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Hero from "../components/Hero";
 
 const Home = (props) => {
 	return (
 		<div>
-			Home
+			<Hero />
 			<div id="about">About</div>
 		</div>
 	);
