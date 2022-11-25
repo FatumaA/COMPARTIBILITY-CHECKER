@@ -14,13 +14,13 @@ const Home = (props) => {
 				id="about"
 				className="flex flex-col container mx-auto text-center py-24 px-6"
 			>
-				<p className="pb-4 font-bold text-2xl">About</p>
-				<p>
+				<p className="pb-4 font-bold text-[#333] text-2xl">About</p>
+				<p className="text-[#333]">
 					We make the perfect couple with a few fun quiz questions to help you
 					see <br />
 					if your partner is a great match for you.
 				</p>
-				<p className="pt-8 max-w-4xl place-self-center">
+				<p className="text-[#333] pt-8 max-w-4xl place-self-center">
 					From songs and poems to novels and movies, romantic love is one of the
 					most enduring subjects for artworks <br />
 					through the ages. But what about the science?

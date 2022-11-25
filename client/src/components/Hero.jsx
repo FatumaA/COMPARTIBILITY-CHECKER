@@ -4,8 +4,10 @@ import { MdFavorite } from "react-icons/md";
 const Hero = () => {
 	return (
 		<div className="flex flex-col bg-primary bg-opacity-20 rounded-b-[60%] content-center py-20 px-10 h-3/4 w-full">
-			<p className="italic text-5xl text-center mb-4">Compartibility Checker</p>
-			<p className="text-center pb-8">
+			<p className="italic text-[#333] text-5xl text-center mb-4">
+				Compartibility Checker
+			</p>
+			<p className="text-[#333] text-center pb-8">
 				Take quizs to see if you match with your other half. <br />
 				See what you both have in common.
 			</p>
