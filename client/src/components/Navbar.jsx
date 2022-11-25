@@ -58,19 +58,32 @@ const Navbar = (props) => {
 						className="z-10 border-2 border-primary p-5 m-4"
 					>
 						<div className="flex flex-col gap-4">
+							<Link
+								to="/"
+								onClick={handleClick}
+								className="text-primary text-lg hover:text-hover"
+							>
+								Home
+							</Link>
 							<a
 								href="/#about"
+								onClick={handleClick}
 								className="text-primary text-lg hover:text-hover"
 							>
 								About
 							</a>
 							<Link
 								to="login"
+								onClick={handleClick}
 								className="text-primary text-lg hover:text-hover"
 							>
 								Log In
 							</Link>
-							<Link to="signup" className="btn-primary px-5 w-fit">
+							<Link
+								to="signup"
+								onClick={handleClick}
+								className="btn-primary px-5 w-fit"
+							>
 								Sign Up
 							</Link>
 						</div>
