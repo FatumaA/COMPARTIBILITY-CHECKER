@@ -9,11 +9,11 @@ const Footer = () => {
 			<div className="flex flex-col md:flex-row justify-between container mx-4 md:mx-auto">
 				<div className="flex flex-col gap-8">
 					<Link to="/">
-						<img src={require("../logo-white.png")} alt="logo" />
+						<img src={"images/logo-white.png"} alt="logo" />
 					</Link>
 					<div>
 						<p className="pb-1">Subscribe to my Newsletter</p>
-						<div className="bg-white rounded-md p-1 text-textDark w-fit">
+						<div className="bg-white rounded-md p-1 text-[#333] w-fit">
 							<form
 								onSubmit={(e) => {
 									e.preventDefault();
@@ -23,7 +23,7 @@ const Footer = () => {
 								<input
 									type="email"
 									placeholder="Enter Email"
-									className="border-none outline-none w-60"
+									className="bg-white border-none outline-none w-60"
 								/>
 								<button type="submit" className="btn-accent">
 									Join
@@ -59,7 +59,7 @@ const Footer = () => {
 					<p> &#169; 2022 COPYRIGHT - </p>
 					<Link to="/">
 						<img
-							src={require("../logo-white.png")}
+							src={"images/logo-white.png"}
 							alt="logo"
 							style={{ width: "120px" }}
 						/>
