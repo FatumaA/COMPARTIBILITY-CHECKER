@@ -20,7 +20,7 @@ const swaggerDocument = require('./swagger.json');
 const passportSetup = require("./config/passport_setup");
 
 // add cors
-app.use(cors());
+app.use(cors({origin:'*'}));
 
 app.use( bodyParser.json() );       
 app.use(bodyParser.urlencoded({     
