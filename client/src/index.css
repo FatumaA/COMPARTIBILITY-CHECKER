@@ -5,7 +5,15 @@
 
 @layer components {
     .btn-primary {
-        @apply bg-primary py-1 px-12 -mt-1 border-none hover:bg-hover
+        @apply bg-primary py-1 px-12 border-none hover:bg-hover
                text-white text-sm lg:text-lg items-center rounded-md;
       }
+    .btn-secondary {
+        @apply text-primary border-2 border-primary py-1 px-12 hover:text-hover hover:border-hover
+        text-sm lg:text-lg items-center rounded-md;
+    }
+    .btn-accent {
+        @apply bg-accent border-none rounded-l-3xl rounded-r-md py-1 px-3 hover:bg-accentHover
+        text-white text-sm lg:text-lg items-center;
+    }
 }
