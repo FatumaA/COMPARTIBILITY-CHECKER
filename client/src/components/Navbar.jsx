@@ -13,9 +13,9 @@ const Navbar = (props) => {
 		<>
 			{/* Main nav */}
 			<div className="hidden md:block sticky">
-				<nav className="flex flex-row justify-between gap-4 py-5">
+				<nav className="flex flex-row justify-between gap-4 py-5 container mx-auto">
 					<Link to="/">
-						<img src={require("../logo-match.png")} alt="Kitchen Diary" />
+						<img src={require("../logo-match.png")} alt="logo" />
 					</Link>
 					<div className="flex flex-row justify-between gap-10">
 						<a href="/#about" className="text-primary text-lg hover:text-hover">
@@ -33,10 +33,10 @@ const Navbar = (props) => {
 
 			{/* Mobile nav */}
 			<div className="block md:hidden sticky">
-				<nav className="lg:hidden gap-4 py-5">
+				<nav className="lg:hidden gap-4 py-5 px-4">
 					<div className="flex flex-row justify-between">
 						<Link to="/">
-							<img src={require("../logo-match.png")} alt="Kitchen Diary" />
+							<img src={require("../logo-match.png")} alt="logo" />
 						</Link>
 						<div>
 							<MdMenu
