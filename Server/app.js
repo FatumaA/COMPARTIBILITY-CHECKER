@@ -8,6 +8,7 @@ require('dotenv').config();
 const passport = require('passport');
 const session = require('express-session');
 const authRoutes = require('./routes/auth');
+const profileRoutes = require('./routes/profileRoutes');
 
 //passport setup
 const passportSetup = require("./config/passport_setup");
@@ -47,6 +48,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', authRoutes);
+app.use('/profile',profileRoutes);
 
 app.listen(PORT, () => {
     console.log(`server has started 'http://localhost:${PORT}'`);
