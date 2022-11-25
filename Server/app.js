@@ -41,7 +41,7 @@ app.use(
       secure: true, // if true: only transmit cookie over https
       httpOnly: false, // if true: prevents client side JS from reading the cookie
       maxAge: 1000 * 60 * 60 * 60, // session max age in milliseconds
-      sameSite: "lax", // make sure sameSite is not none
+    //   sameSite: "lax", // make sure sameSite is not none
     },
   })
 );
