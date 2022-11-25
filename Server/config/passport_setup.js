@@ -19,7 +19,7 @@ passport.serializeUser((user,done) => {
 
 passport.use(new GoogleStrategy( {
     //options for strategy
-    callbackURL:"http://localhost:8080/auth/google/redirect",
+    callbackURL:"https://compatibility.onrender.com/auth/google/redirect",
     clientID:process.env.clientID,
     clientSecret:process.env.clientSecret
 }, function(accessToken,refreshToken,profile,done){
