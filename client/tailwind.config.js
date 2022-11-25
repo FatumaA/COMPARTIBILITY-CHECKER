@@ -10,6 +10,7 @@ module.exports = {
 				primary: "#8B80B6",
 				accent: "#F97474",
 				textDark: "#222",
+				hover: "#7C6FAD",
 			},
 		},
 	},
