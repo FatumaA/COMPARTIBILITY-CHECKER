@@ -1,0 +1,69 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Compatibility Checker",
+        "name": "Compatibility Checker",
+        "description" : "Compatibility checker api to check if two people have stuffs in common.",
+        "version": "1.0.0"
+    },
+    "host": "localhost:8080",
+    "contact":"email: achuulimagbama@gmail.com",
+
+    "schemes": [
+        "http","https"
+    ],
+    
+    "paths": {
+        "/auth/google/" : {
+            "get" : {"tags":["User"],
+                "summary": "Sign in with Google",
+                "description": "Sign in with google provider",
+                "operationId": "Get google id and auth user",
+                "produces": [
+                    "application/json"
+                ],
+                "responses" : {
+                    "200": {
+                        "description":"OK",
+                        "content": {
+                            "application/json" : {
+                                "schema" : {
+                                    "type":"object",
+                                    "example": {
+                                        "customerId": 1,
+                                        "bookId": 1,
+                                        "orderDate": "2019-01-01",
+                                        "deliveryDate": "2019-01-02"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            },
+        "/profile" : {
+            "get" : {"tags":["User"],
+                "summary": "Get authenticated User Profile",
+                "description": "Returns authentication user profile",
+                "responses" : {
+                    "200": {
+                        "description":"OK",
+                        "content": {
+                            "application/json" : {
+                                "schema" : {
+                                    "type":"object",
+                                    "example": {
+                                        "username":"Achu Agbama",
+                                        "googleId":"106296897808035622504",
+                                        "thumbnail":"https://lh3.googleusercontent.com/a/ALm5wu0IelVrOS6rjZmrfw9erZ0VqiNZKzWvWrx4RQOWHA=s96-c"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+        }
+        }
