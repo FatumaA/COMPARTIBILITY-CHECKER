@@ -14,7 +14,7 @@ const QuizCard = ({ question, lengthOfQues }) => {
 				<div>
 					{question?.options.map((option, index) => {
 						return (
-							<label className="flex items-center gap-3 text-textDark py-[19px] px-[30px] bg-[#F1F1F1] hover:bg-[#F97474] hover:text-[#ffffff] rounded-lg w-full mb-[32px]">
+							<label key={index} className="flex items-center gap-3 text-textDark py-[19px] px-[30px] bg-[#F1F1F1] hover:bg-[#F97474] hover:text-[#ffffff] rounded-lg w-full mb-[32px]">
 								<input
 									type="radio"
 									value="Trade fare"

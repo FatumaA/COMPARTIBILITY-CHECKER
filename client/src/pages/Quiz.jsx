@@ -28,7 +28,11 @@ const Quiz = () => {
 			<div className="max-w-[693px] w-full mx-auto">
 				{questions.map((question, index) => {
 					if (curQuest === question.id) {
-						return <QuizCard question={question} lengthOfQues={lengthOfQues} />;
+						return (
+							<div key={index}>
+								<QuizCard question={question} lengthOfQues={lengthOfQues} />
+							</div>
+						);
 					}
 				})}
 
