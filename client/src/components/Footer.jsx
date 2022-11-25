@@ -9,7 +9,7 @@ const Footer = () => {
 			<div className="flex flex-col md:flex-row justify-between container mx-4 md:mx-auto">
 				<div className="flex flex-col gap-8">
 					<Link to="/">
-						<img src={require("../images/logo-white.png")} alt="logo" />
+						<img src={"images/logo-white.png"} alt="logo" />
 					</Link>
 					<div>
 						<p className="pb-1">Subscribe to my Newsletter</p>
@@ -59,7 +59,7 @@ const Footer = () => {
 					<p> &#169; 2022 COPYRIGHT - </p>
 					<Link to="/">
 						<img
-							src={require("../images/logo-white.png")}
+							src={"images/logo-white.png"}
 							alt="logo"
 							style={{ width: "120px" }}
 						/>
