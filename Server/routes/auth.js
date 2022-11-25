@@ -2,11 +2,15 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
-router.post("/logout", (req,res) => {
-    req.logOut()
-    res.json( "User logged out sucessfully")
-    console.log(`-------> User Logged out`)
- })
+
+
+router.get('/logout', function(req, res, next) {
+    //handle with passport
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      res.status(200).json("Logged out sucessfully")
+    });
+  });
 
 
 //auth with google
@@ -17,8 +21,11 @@ router.get('/google',passport.authenticate('google',{
 
 //callback route for google
 router.get('/google/redirect', passport.authenticate('google'),(req,res) => {
-    res.send(req.user)
-    res.redirect('/');
+    try {
+        res.status(200).json(req.user)
+    } catch (error) {
+        res.status(400).json(error)
+    }
 });
 
 module.exports = router;
