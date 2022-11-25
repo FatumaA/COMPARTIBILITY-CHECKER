@@ -29,7 +29,7 @@ passport.use(new GoogleStrategy( {
     //check if user exists
     User.findOne({googleId:profile.id}).then((currentUser) => {
         if (currentUser) {
-            // done(null,currentUser);
+            done(null,currentUser);
         }else{
             //create new user, if it does not exists
             new User({
@@ -37,7 +37,6 @@ passport.use(new GoogleStrategy( {
                 googleId:profile.id,
                 thumbnail:profile.photos.at(0).value
             }).save().then((newUser) => {
-                console.log(newUser);
                 done(null, newUser);
             })
         }
