@@ -5,5 +5,6 @@ const QuestionSchema = mongoose.Schema({
     type: String,
     required: [true, "Input Question"],
   },
-  answer: String,
 });
+
+module.exports = mongoose.model("Question", QuestionSchema);
