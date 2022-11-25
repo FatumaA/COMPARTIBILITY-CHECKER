@@ -30,10 +30,9 @@
                                 "schema" : {
                                     "type":"object",
                                     "example": {
-                                        "customerId": 1,
-                                        "bookId": 1,
-                                        "orderDate": "2019-01-01",
-                                        "deliveryDate": "2019-01-02"
+                                        "username":"Achu Agbama",
+                                        "googleId":"106296897808035622504",
+                                        "thumbnail":"https://lh3.googleusercontent.com/a/ALm5wu0IelVrOS6rjZmrfw9erZ0VqiNZKzWvWrx4RQOWHA=s96-c"
                                     }
                                 }
                             }
