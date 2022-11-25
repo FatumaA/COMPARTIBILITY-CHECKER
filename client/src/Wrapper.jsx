@@ -6,12 +6,14 @@ import Footer from "./components/Footer";
 
 const Wrapper = ({ children }) => {
 	return (
-		<div className=" container mx-auto px-4">
+		<>
 			<Navbar />
-			{children}
-			<Outlet />
+			<div className="container mx-auto">
+				{children}
+				<Outlet />
+			</div>
 			<Footer />
-		</div>
+		</>
 	);
 };
 
