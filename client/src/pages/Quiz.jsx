@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import QuizCard from '../components/QuizCard';
-import { questions } from '../data';
+import React, { useState } from "react";
+import QuizCard from "../components/QuizCard";
+import { questions } from "../data/data";
 
 const Quiz = () => {
 	const lengthOfQues = questions.length;
 	const [curQuest, setCurQuest] = useState(3);
 
 	const changeQuestion = (action) => {
-		if (action === 'next') {
+		if (action === "next") {
 			if (curQuest === lengthOfQues) {
 				return;
 			} else {
 				setCurQuest((prev) => prev + 1);
 			}
 		}
-		if (action === 'prev') {
+		if (action === "prev") {
 			if (curQuest === 1) {
 				return;
 			} else {
@@ -37,10 +37,16 @@ const Quiz = () => {
 				})}
 
 				<div className="flex items-center justify-between gap-3 mt-[80px]">
-					<button className="btn-secondary" onClick={() => changeQuestion('prev')}>
+					<button
+						className="btn-secondary"
+						onClick={() => changeQuestion("prev")}
+					>
 						Previous
 					</button>
-					<button className="btn-primary" onClick={() => changeQuestion('next')}>
+					<button
+						className="btn-primary"
+						onClick={() => changeQuestion("next")}
+					>
 						Next
 					</button>
 				</div>

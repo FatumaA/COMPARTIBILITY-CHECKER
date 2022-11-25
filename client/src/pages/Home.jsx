@@ -27,7 +27,7 @@ const Home = (props) => {
 					experience it differently and how it can change over time.
 				</p>
 				<div class="relative  mt-28 w-[80%] place-self-center">
-					<img src={require("../about.png")} alt="abt" />
+					<img src={require("../images/about.png")} alt="abt" />
 					<p class="absolute text-3xl text-white bottom-4 left-1/2 -translate-x-1/2">
 						Over 13,000 couples take this quiz
 					</p>
