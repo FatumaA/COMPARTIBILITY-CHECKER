@@ -1,5 +1,6 @@
 import React from "react";
 import { MdFavorite } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
 	return (
@@ -33,9 +34,9 @@ const Hero = () => {
 					alt="pic"
 				/>
 			</div>
-			<button className="btn-primary place-self-center mt-16">
+			<Link to="questions" className="btn-primary place-self-center mt-16">
 				Get started
-			</button>
+			</Link>
 		</div>
 	);
 };
