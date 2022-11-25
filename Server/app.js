@@ -36,12 +36,12 @@ app.use(
   session({
     secret: process.env.SECRET,
     saveUninitialized: true,
-    resave: true,
+    resave: false,
     cookie: {
       secure: true, // if true: only transmit cookie over https
       httpOnly: false, // if true: prevents client side JS from reading the cookie
       maxAge: 1000 * 60 * 60 * 60, // session max age in milliseconds
-    //   sameSite: "lax", // make sure sameSite is not none
+      sameSite: "lax", // make sure sameSite is not none
     },
   })
 );
@@ -50,7 +50,7 @@ app.use(
 app.use(passport.initialize());
 
 //initailize passport to use session cookie
-app.use(passport.session());
+// app.use(passport.session());
 
 //connect Database
 mongoose.connect(process.env.MONGO_URI, () => {
