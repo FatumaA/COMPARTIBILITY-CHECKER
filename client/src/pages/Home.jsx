@@ -8,7 +8,7 @@ const Home = (props) => {
 			<Hero />
 			<div
 				id="about"
-				className="flex flex-col container mx-auto text-center py-16 px-6"
+				className="flex flex-col container mx-auto text-center py-24 px-6"
 			>
 				<p className="pb-4 font-bold text-2xl">About</p>
 				<p>
@@ -16,7 +16,7 @@ const Home = (props) => {
 					see <br />
 					if your partner is a great match for you.
 				</p>
-				<p className="pt-8 max-w-3xl place-self-center">
+				<p className="pt-8 max-w-4xl place-self-center">
 					From songs and poems to novels and movies, romantic love is one of the
 					most enduring subjects for artworks <br />
 					through the ages. But what about the science?
@@ -26,6 +26,12 @@ const Home = (props) => {
 					in one study. The complexity of love has much to do with how people
 					experience it differently and how it can change over time.
 				</p>
+				<div class="relative  mt-28 w-[80%] place-self-center">
+					<img src={require("../about.png")} alt="abt" />
+					<p class="absolute text-3xl text-white bottom-4 left-1/2 -translate-x-1/2">
+						Over 13,000 couples take this quiz
+					</p>
+				</div>
 			</div>
 		</div>
 	);
