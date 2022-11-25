@@ -13,7 +13,7 @@ const Footer = () => {
 					</Link>
 					<div>
 						<p className="pb-1">Subscribe to my Newsletter</p>
-						<div className="bg-white rounded-md p-1 text-textDark w-fit">
+						<div className="bg-white rounded-md p-1 text-[#333] w-fit">
 							<form
 								onSubmit={(e) => {
 									e.preventDefault();
@@ -23,7 +23,7 @@ const Footer = () => {
 								<input
 									type="email"
 									placeholder="Enter Email"
-									className="border-none outline-none w-60"
+									className="bg-white border-none outline-none w-60"
 								/>
 								<button type="submit" className="btn-accent">
 									Join
