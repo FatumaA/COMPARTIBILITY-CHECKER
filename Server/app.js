@@ -10,8 +10,17 @@ const session = require('express-session');
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profileRoutes');
 
+const cors = require('cors');
+
+// add swagger
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 //passport setup
 const passportSetup = require("./config/passport_setup");
+
+// add cors
+app.use(cors());
 
 app.use( bodyParser.json() );       
 app.use(bodyParser.urlencoded({     
@@ -46,6 +55,9 @@ mongoose.connect(process.env.MONGO_URI, () => {
 app.get('/', (req, res) => {
     res.send({mssg: "Welcome to Compartibility Checker"})
 });
+
+// add swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use('/auth', authRoutes);
 app.use('/profile',profileRoutes);
