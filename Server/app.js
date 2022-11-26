@@ -24,14 +24,25 @@ const passportSetup = require("./config/passport_setup");
 const PORT = process.env.PORT || 8080;
 
 // add cors
-app.use(cors({ origin: "*" }));
+app.use(cors());
+
+app.use((req,res,next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  if (req.method === "OPTIONS") {
+    req.header('Access-Control-Allow-Methods', 'PUT, POST, DELETE, PATCH, GET');
+    return res.status(200).json({});
+  }
+ return next();
+})
 
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
-    extended: true,
+    extended: false,
   })
 );
+
 
 var store = new MongoDBStore({
     uri: process.env.MONGO_URI,
@@ -80,6 +91,11 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
 app.use("/question", questionRoutes);
+
+app.use((req, res, next) => {
+  res.header({ "Access-Control-Allow-Origin": "*" });
+  next();
+});
 
 app.listen(PORT, () => {
   console.log(`server has started 'http://localhost:${PORT}'`);
