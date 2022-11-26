@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 require("dotenv").config();
 const passport = require("passport");
 const session = require("express-session");
+var MongoDBStore = require('connect-mongodb-session')(session);
 const authRoutes = require("./routes/auth");
 const profileRoutes = require("./routes/profileRoutes");
 const questionRoutes = require("./routes/questionRoutes");
@@ -32,6 +33,16 @@ app.use(
   })
 );
 
+var store = new MongoDBStore({
+    uri: process.env.MONGO_URI,
+    collection: 'user'
+  });
+
+// Catch errors
+store.on('error', function(error) {
+    console.log(error);
+  });
+
 app.use(
   session({
     secret: process.env.SECRET,
@@ -43,6 +54,7 @@ app.use(
       maxAge: 1000 * 60 * 60 * 60, // session max age in milliseconds
       sameSite: "lax", // make sure sameSite is not none
     },
+    store: store,
   })
 );
 
