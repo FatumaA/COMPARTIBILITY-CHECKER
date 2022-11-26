@@ -39,7 +39,9 @@ passport.use(new GoogleStrategy( {
                 thumbnail:profile.photos.at(0).value
             }).save().then((newUser) => {
                 done(null, newUser);
-            });
+            }).catch(error => {
+                console.log(error);
+            })
         }
     });
 } ) );
