@@ -23,8 +23,9 @@ passport.use(new GoogleStrategy( {
     clientID:process.env.clientID,
     clientSecret:process.env.clientSecret,
     Proxy:true
-}, async(accessToken,refreshToken,profile,done) =>{
-
+}, function(accessToken,refreshToken,profile,done){
+    console.log('callback function fired!');
+    console.log(profile);
 
     //check if user exists
     User.findOne({googleId:profile.id}).then((currentUser) => {
@@ -36,12 +37,10 @@ passport.use(new GoogleStrategy( {
                 username:profile.displayName,
                 googleId:profile.id,
                 email:profile._json.email,
-                thumbnail:profile.photos.at(0).value
+                // thumbnail:profile.photos.at(0).value
             }).save().then((newUser) => {
                 done(null, newUser);
-            }).catch(error => {
-                console.log(error);
-            })
+            });
         }
     });
 } ) );
