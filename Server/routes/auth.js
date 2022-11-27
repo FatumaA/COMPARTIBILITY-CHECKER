@@ -22,7 +22,6 @@ router.get('/google',passport.authenticate('google',{
 router.get('/google/redirect', passport.authenticate('google'),(req,res) => {
     try {
         res.status(200).json(req.user);
-        res.redirect('/')
     } catch (error) {
         res.status(400).json(error)
     }
