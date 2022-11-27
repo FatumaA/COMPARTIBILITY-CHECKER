@@ -21,6 +21,7 @@ router.get('/google',passport.authenticate('google',{
 //callback route for google
 router.get('/google/redirect', passport.authenticate('google'),(req,res) => {
     try {
+        res.redirect('/')
         res.status(200).json(req.user)
     } catch (error) {
         res.status(400).json(error)
