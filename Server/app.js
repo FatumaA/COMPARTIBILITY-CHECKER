@@ -27,8 +27,9 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 
 app.use((req,res,next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  // res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header({ "Access-Control-Allow-Origin": "*" });
   if (req.method === "OPTIONS") {
     req.header('Access-Control-Allow-Methods', 'PUT, POST, DELETE, PATCH, GET');
     return res.status(200).json({});
@@ -92,10 +93,7 @@ app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
 app.use("/question", questionRoutes);
 
-app.use((req, res, next) => {
-  res.header({ "Access-Control-Allow-Origin": "*" });
-  next();
-});
+
 
 app.listen(PORT, () => {
   console.log(`server has started 'http://localhost:${PORT}'`);
