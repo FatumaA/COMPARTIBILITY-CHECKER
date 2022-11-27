@@ -21,10 +21,9 @@ router.get('/google',passport.authenticate('google',{
 //callback route for google
 router.get('/google/redirect', passport.authenticate('google'),(req,res) => {
     try {
-        res.redirect('https://hng-compatibility-checker.netlify.app/')
-        res.status(200).json(req.user)
+        res.status(200).json(req.user);
+        res.redirect('/')
     } catch (error) {
-        res.redirect('https://hng-compatibility-checker.netlify.app/login')
         res.status(400).json(error)
     }
 });
